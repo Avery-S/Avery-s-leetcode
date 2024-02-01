@@ -1,0 +1,15 @@
+class Solution:
+    def divideArray(self, nums: List[int], k: int) -> List[List[int]]:
+        nums.sort()
+        tmp = []
+        result = []
+        for i in nums:
+            tmp.append(i)
+            if len(tmp) == 3:
+                if tmp[-1]-tmp[0]<=k:
+                    result.append(tmp)
+                tmp = []
+        if (len(result)*3) != len(nums):
+            return []
+        else:
+            return result
