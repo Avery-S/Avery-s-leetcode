@@ -1,0 +1,9 @@
+from collections import defaultdict
+class Solution:
+    def frequencySort(self, s: str) -> str:
+        dicts = defaultdict(int)
+        for l in s:
+            dicts[l]+=1
+        sorts = sorted(dicts.items(), key=lambda item: item[1], reverse = True)
+        results = ''.join([l * freq for l, freq in sorts])
+        return results
